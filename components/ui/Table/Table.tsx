@@ -63,7 +63,6 @@ const Table = <T extends { id: string | number }>({
       return;
     }
     const rowIndex = parseInt(lastClickedRowIndex, 10);
-    console.log('first', rowRefs.current)
     if (rowRefs.current[rowIndex]) {
       rowRefs.current[rowIndex]?.focus();
       sessionStorage.removeItem(LAST_CLICKED_ROW_INDEX_SESSION_KEY);
