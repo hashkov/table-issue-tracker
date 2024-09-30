@@ -31,40 +31,44 @@ Table Issue Tracker App is a Next.js-based issue tracking application that prior
 
 ## Project Structure
 
-Table-Issue-Tracker-App/
-├── .next/
-├── app/
-│   ├── (root)/
+## Project Structure
+
+```
+Table-Issue-Tracker-App
+├── .next
+├── app
+│   ├── (root)
 │   │   ├── page.module.css
 │   │   └── page.tsx
-│   ├── issues/
-│   │   └── [id]/
+│   ├── issues
+│   │   └── [id]
 │   │       ├── page.module.css
 │   │       └── page.tsx
 │   ├── favicon.ico
 │   └── layout.tsx
-├── components/
-│   ├── ClientIssuesDetails/
+├── components
+│   ├── ClientIssuesDetails
 │   │   └── ClientIssuesDetails.tsx
-│   ├── ClientIssuesTable/
+│   ├── ClientIssuesTable
 │   │   └── ClientIssuesTable.tsx
-│   ├── Header/
+│   ├── Header
 │   │   └── Header.tsx
-│   └── ui/
-│       ├── Icon/
-│       ├── Search/
-│       └── Table/
-│           ├── TableSkeleton/
+│   └── ui
+│       ├── Icon
+│       ├── Search
+│       └── Table
+│           ├── TableSkeleton
 │           ├── Table.module.css
 │           └── Table.tsx
-├── hooks/
+├── hooks
 │   └── useFetch.ts
-├── lib/
+├── lib
 │   └── utils.ts
-├── mock/
-├── node_modules/
-├── public/
-└── styles/
+├── mock
+├── node_modules
+├── public
+└── styles
+```
 
 ## Getting Started
 
@@ -91,6 +95,9 @@ To get TABLE-APP running locally, follow these steps:
 
 4. **Open the application**
    Navigate to `http://localhost:3000` in your web browser.
+
+5. **Mocked data**
+   Please adjust code to use mocked data.
 
 ## Accessibility Testing
 
