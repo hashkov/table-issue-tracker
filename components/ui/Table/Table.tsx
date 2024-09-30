@@ -1,4 +1,3 @@
-'use client';
 import React, {
   useState,
   useEffect,
@@ -11,19 +10,22 @@ import Image from 'next/image';
 import { Column, SortOrder } from '@/types';
 import styles from '@/components/ui/Table/Table.module.css';
 import Search from '@/components/ui/Search/Search';
+import TableSkeleton from '@/components/ui/Table/TableSkeleton/TableSkeleton';
 
 interface TableProps<T> {
   data: T[];
   columns: Column<T>[];
   caption?: string;
+  isLoading: boolean;
 }
 
 const LAST_CLICKED_ROW_INDEX_SESSION_KEY = 'lastClickedRowIndex';
 
 const Table = <T extends { id: string | number }>({
-  data,
+  data = [],
   columns,
   caption,
+  isLoading,
 }: TableProps<T>) => {
   const [sortColumn, setSortColumn] = useState<keyof T | ''>('');
   const [sortDirection, setSortDirection] = useState<SortOrder>(SortOrder.Asc);
@@ -141,8 +143,8 @@ const Table = <T extends { id: string | number }>({
     return String(content);
   }, []);
 
-  if (data.length === 0) {
-    return <div className={styles.emptyState}>No data available</div>;
+  if (data.length === 0 || isLoading) {
+    return <TableSkeleton rowCount={6} columnCount={columns.length} />;
   }
 
   return (
@@ -229,7 +231,10 @@ const Table = <T extends { id: string | number }>({
               {columns.map((column) => (
                 <td key={String(column.key)} className={styles.td}>
                   {column.key === 'url' ? (
-                    <a href={rowData[column.key] as string}>
+                    <a
+                      href={rowData[column.key] as string}
+                      className={styles.a}
+                    >
                       {rowData[column.key] as React.ReactNode}
                     </a>
                   ) : (

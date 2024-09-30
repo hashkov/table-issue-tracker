@@ -3,9 +3,10 @@
 import React from 'react';
 import Table from '@/components/ui/Table/Table';
 import { Issue, Column } from '@/types';
+import useFetch from '@/hooks/useFetch';
 
 interface ClientIssuesTableProps {
-  issues: Issue[];
+  issues?: Issue[];
 }
 
 const columns: Column<Issue>[] = [
@@ -17,8 +18,18 @@ const columns: Column<Issue>[] = [
   { key: 'url', label: 'URL', filterable: true, sortable: true },
 ];
 
-const ClientIssuesTable: React.FC<ClientIssuesTableProps> = ({ issues }) => {
-  return <Table data={issues} columns={columns} />;
+const ClientIssuesTable: React.FC<ClientIssuesTableProps> = ({
+  issues = [],
+}) => {
+  const { data, loading, error } = useFetch<Issue[]>(
+    'http://localhost:1337/issues'
+  );
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+  return <Table data={data || issues} columns={columns} isLoading={loading} />;
 };
 
 export default ClientIssuesTable;

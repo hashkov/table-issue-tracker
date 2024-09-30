@@ -13,11 +13,6 @@ const Header = () => {
                 Home
               </Link>
             </li>
-            <li>
-              <Link href="/issue" className={styles.navLink}>
-                Issues
-              </Link>
-            </li>
           </ul>
         </nav>
       </header>

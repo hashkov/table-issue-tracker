@@ -4,6 +4,7 @@
 .table {
   margin-inline: auto;
   border-collapse: collapse;
+  width: 100%;
 }
 
 .td,
@@ -62,6 +63,10 @@
   position: relative;
 }
 
+.a {
+  padding: 1rem;
+}
+
 @media (max-width: 768px) {
   .table {
     font-size: 0.5rem;
@@ -71,4 +76,68 @@
   .td {
     padding: 8px;
   }
+}
+
+.skeleton .skeletonText {
+  height: 1em;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton .columnTitle.skeletonText {
+  width: 70%;
+  max-width: 150px;
+}
+
+.skeleton .td .skeletonText {
+  width: 80%;
+  max-width: 200px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Update these styles in your Table.module.css file */
+
+.tr {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.tr.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.tr.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tr.removing {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+/* Adjust the existing hover style to maintain consistency */
+.tr:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* Add a subtle transition to the hover effect */
+.tr {
+  transition: background-color 0.2s ease-in-out, opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
 }
