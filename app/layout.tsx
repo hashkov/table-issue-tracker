@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${lato.className}`}>
       <body
-        className={`${lato.variable} ${geistSans.variable} ${geistMono.variable}`}
+        className={`${lato.variable} ${lato.variable} ${geistSans.variable} ${geistMono.variable}`}
       >
         <Header />
         <main>{children}</main>

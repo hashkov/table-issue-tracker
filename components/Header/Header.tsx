@@ -10,7 +10,7 @@ const Header = () => {
           <ul className={styles.navList}>
             <li>
               <Link href="/" className={styles.navLink}>
-                Home
+                Issues Tracker
               </Link>
             </li>
           </ul>
