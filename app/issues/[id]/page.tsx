@@ -8,7 +8,6 @@ import { mockIssues } from '@/mock';
 
 async function getIssue(id: number): Promise<Issue | null> {
   const issue = mockIssues.find((issue) => {
-    console.log(issue);
     return issue.id == id;
   });
   return new Promise((resolve, reject) => {

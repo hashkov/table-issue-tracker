@@ -106,38 +106,3 @@
     opacity: 0.6;
   }
 }
-
-/* Update these styles in your Table.module.css file */
-
-.tr {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.tr.hidden {
-  opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
-}
-
-.tr.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.tr.removing {
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-}
-
-/* Adjust the existing hover style to maintain consistency */
-.tr:hover {
-  background-color: var(--secondary-color);
-  cursor: pointer;
-}
-
-/* Add a subtle transition to the hover effect */
-.tr {
-  transition: background-color 0.2s ease-in-out, opacity 0.3s ease-in-out,
-    transform 0.3s ease-in-out;
-}

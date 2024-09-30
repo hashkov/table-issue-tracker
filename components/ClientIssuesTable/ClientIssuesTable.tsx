@@ -4,6 +4,7 @@ import React from 'react';
 import Table from '@/components/ui/Table/Table';
 import { Issue, Column } from '@/types';
 import useFetch from '@/hooks/useFetch';
+import { mockIssues } from '@/mock';
 
 interface ClientIssuesTableProps {
   issues?: Issue[];
@@ -22,7 +23,7 @@ const ClientIssuesTable: React.FC<ClientIssuesTableProps> = ({
   issues = [],
 }) => {
   const { data, loading, error } = useFetch<Issue[]>(
-    'http://localhost:1337/issues'
+    'http://localhost:1337/issues', {isMocked: true, mockData: mockIssues}
   );
 
   if (error) {
