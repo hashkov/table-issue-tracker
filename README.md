@@ -96,9 +96,6 @@ To get TABLE-APP running locally, follow these steps:
 4. **Open the application**
    Navigate to `http://localhost:3000` in your web browser.
 
-5. **Mocked data**
-   Please adjust code to use mocked data.
-
 ## Accessibility Testing
 
 We are committed to maintaining high accessibility standards. Here's how we ensure and test for accessibility:
