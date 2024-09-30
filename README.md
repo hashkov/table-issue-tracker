@@ -34,33 +34,33 @@ Table Issue Tracker App is a Next.js-based issue tracking application that prior
 Table-Issue-Tracker-App/
 ├── .next/
 ├── app/
-│ ├── (root)/
-│ │ ├── page.module.css
-│ │ └── page.tsx
-│ ├── issues/
-│ │ └── [id]/
-│ │ ├── page.module.css
-│ │ └── page.tsx
-│ ├── favicon.ico
-│ └── layout.tsx
+│   ├── (root)/
+│   │   ├── page.module.css
+│   │   └── page.tsx
+│   ├── issues/
+│   │   └── [id]/
+│   │       ├── page.module.css
+│   │       └── page.tsx
+│   ├── favicon.ico
+│   └── layout.tsx
 ├── components/
-│ ├── ClientIssuesDetails/
-│ │ └── ClientIssuesDetails.tsx
-│ ├── ClientIssuesTable/
-│ │ └── ClientIssuesTable.tsx
-│ ├── Header/
-│ │ └── Header.tsx
-│ └── ui/
-│ │ ├── Icon/
-│ │ ├── Search/
-│ │ └── Table/
-│ │ │ ├── TableSkeleton/
-│ │ ├── Table.module.css
-│ │ └── Table.tsx
+│   ├── ClientIssuesDetails/
+│   │   └── ClientIssuesDetails.tsx
+│   ├── ClientIssuesTable/
+│   │   └── ClientIssuesTable.tsx
+│   ├── Header/
+│   │   └── Header.tsx
+│   └── ui/
+│       ├── Icon/
+│       ├── Search/
+│       └── Table/
+│           ├── TableSkeleton/
+│           ├── Table.module.css
+│           └── Table.tsx
 ├── hooks/
-│ └── useFetch.ts
+│   └── useFetch.ts
 ├── lib/
-│ └── utils.ts
+│   └── utils.ts
 ├── mock/
 ├── node_modules/
 ├── public/
