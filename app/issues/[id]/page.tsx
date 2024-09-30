@@ -7,11 +7,9 @@ import styles from './page.module.css';
 import { mockIssues } from '@/mock';
 
 async function getIssue(id: number): Promise<Issue | null> {
-  const issue = mockIssues.find((issue) => {
-    return issue.id == id;
-  });
-  return new Promise((resolve, reject) => {
-    resolve(issue);
+  const issue = mockIssues.find((issue) => issue.id === id);
+  return new Promise((resolve) => {
+    resolve(issue || null);
   });
 }
 
@@ -20,7 +18,7 @@ export default async function IssuePage({
 }: {
   params: { id: number };
 }) {
-  const issue = await getIssue(params.id);
+  const issue = await getIssue(Number(params.id));
 
   if (!issue) notFound();
 
