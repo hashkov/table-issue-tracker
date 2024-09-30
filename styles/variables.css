@@ -1,0 +1,11 @@
+:root {
+  --accent-color: #435060;
+  --primary-color: #607085;
+  --secondary-color: #f9f9f9;
+  --th-font-color: #fff;
+  --td-font-color: #131516;
+  --bg-color: #fff;
+  --row-height: 45px;
+  --table-font: var(--font-lato);
+  --border-radius: 6px;
+}
