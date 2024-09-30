@@ -58,15 +58,17 @@ const Table = <T extends { id: string | number }>({
     const lastClickedRowIndex = sessionStorage.getItem(
       LAST_CLICKED_ROW_INDEX_SESSION_KEY
     );
+
     if (lastClickedRowIndex === null) {
       return;
     }
     const rowIndex = parseInt(lastClickedRowIndex, 10);
+    console.log('first', rowRefs.current)
     if (rowRefs.current[rowIndex]) {
       rowRefs.current[rowIndex]?.focus();
       sessionStorage.removeItem(LAST_CLICKED_ROW_INDEX_SESSION_KEY);
     }
-  }, []);
+  }, [data]);
 
   const handleSort = useCallback(
     (column: keyof T) => {

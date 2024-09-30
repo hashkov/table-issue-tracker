@@ -6,6 +6,6 @@
   --td-font-color: #131516;
   --bg-color: #fff;
   --row-height: 45px;
-  --table-font: var(--font-lato);
+  --table-font: var(--font-lato), 'sans-serif';
   --border-radius: 6px;
 }
