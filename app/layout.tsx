@@ -23,7 +23,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Issue Tracker',
+  title: 'Table Issue Tracker',
   description: 'Simple way to track and manage issues',
 };
 

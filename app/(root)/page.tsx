@@ -1,16 +1,7 @@
 import React from 'react';
-import Table from '@/components/Table/Table';
 import { mockIssues } from '@/mock';
-import { Issue, Column } from '@/types';
-
-const columns: Column[] = [
-  { key: 'id', label: 'No.', filterable: true },
-  { key: 'issueType', label: 'Issue Type', filterable: true },
-  { key: 'severity', label: 'Severity', filterable: true },
-  { key: 'component', label: 'Component', filterable: true },
-  { key: 'selector', label: 'Selector', filterable: true },
-  { key: 'url', label: 'URL', filterable: true },
-];
+import { Issue } from '@/types';
+import ClientIssuesTable from '@/components/ClientIssuesTable/ClientIssuesTable';
 
 async function getIssues(): Promise<Issue[]> {
   // In a real app, this would be an API call
@@ -23,7 +14,7 @@ export default async function Home() {
   return (
     <>
       <h1>Issues Table</h1>
-      <Table data={issues} columns={columns} />
+      <ClientIssuesTable issues={issues} />
     </>
   );
 }

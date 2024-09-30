@@ -10,13 +10,14 @@ export interface Issue {
   screenshot: string;
 }
 
-export interface Column {
-  key: keyof Issue;
-  label: string;
-  filterable?: boolean;
-}
-
 export enum SortOrder {
   'Asc' = 'ascending',
   'Desc' = 'descending',
+}
+
+export interface Column<T> {
+  key: keyof T;
+  label: string;
+  filterable?: boolean;
+  sortable?: boolean;
 }
